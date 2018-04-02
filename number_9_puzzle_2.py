@@ -50,7 +50,7 @@ while i<9877:
  i+=1
 
 
-
+## Julia
 
 function f(x)
     #return [a for a in x if Set(vcat(digits(a[1]),digits(a[2])))==y]
@@ -73,3 +73,5 @@ z = filter(i -> Set(vcat(digits(i),digits(i*3))) == Set(y), x)
 [(i,i*3)for i in filter(i->Set(∪(digits(i),digits(i*3)))==Set([1:9;]),[1:9876;])]
 
 [[i,i*3]for i in filter(i->Set(mapreduce(digits,∪,[i,i*3]))==Set([1:9;]),[1:9876;])]
+
+f(i)=Set(digits(i));[(i,3i)for i=1:9999if f(i)∪f(3i)==f(5^18)]
